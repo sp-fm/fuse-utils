@@ -1,0 +1,61 @@
+[tool]
+[tool.poetry]
+name = "fuse-utils"
+version = "0.1.0"
+homepage = "https://github.com/sp-fm/fuse-utils"
+description = "Top-level package for Fusemachines Utilities."
+authors = ["Shashanka Prajapati <shashanka@fusemachines.com>"]
+readme = "README.rst"
+license =  "MIT license"
+keywords = []
+classifiers = [
+    "Development Status :: 2 - Pre-Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Natural Language :: English",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+]
+packages = [
+    { include = "fuse_utils" },
+    { include = "tests", format = "sdist" },
+]
+
+[tool.poetry.dependencies]
+python = "*"
+click = "*"
+
+[tool.poetry.dev-dependencies]
+pytest = "*"
+pytest-cov = "*"
+tox = "*"
+flake8 = "*"
+sphinx = "*"
+sphinx-rtd-theme = "*"
+tomlkit = "*"
+pre-commit = "*"
+
+[tool.poetry.scripts]
+fuse_utils = "fuse_utils.cli:main"
+
+[tool.pytest.ini_options]
+testpaths = "tests"
+
+[tool.black]
+line-length = 80
+
+[tool.flake8]
+max-line-length = 80
+max-complexity = 10
+
+[tool.mypy]
+ignore_missing_imports = "True"
+check_untyped_defs = "True"
+warn_redundant_casts = "True"
+warn_unreachable = "True"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
