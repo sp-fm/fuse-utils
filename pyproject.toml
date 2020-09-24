@@ -38,19 +38,16 @@ tomlkit = "*"
 pre-commit = "*"
 
 [tool.poetry.scripts]
-fuse_utils = "fuse_utils.cli:main"
+fuse = "fuse_utils.cli:main"
 
-[tool.pytest.ini_options]
+[pytest]
 testpaths = "tests"
 
-[tool.black]
-line-length = 80
-
-[tool.flake8]
-max-line-length = 80
+[flake8]
+max-line-length = 88
 max-complexity = 10
 
-[tool.mypy]
+[mypy]
 ignore_missing_imports = "True"
 check_untyped_defs = "True"
 warn_redundant_casts = "True"

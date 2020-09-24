@@ -76,6 +76,7 @@ repos:
       rev: 3.8.0
       hooks:
           - id: flake8
+            args: [--config=pyproject.toml]
             exclude: docs
             additional_dependencies: [flake8-typing-imports==1.7.0]
 
