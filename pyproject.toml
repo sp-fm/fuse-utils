@@ -38,7 +38,7 @@ tomlkit = "*"
 pre-commit = "*"
 
 [tool.poetry.scripts]
-fuse_utils = "fuse_utils.cli:main"
+fuse = "fuse_utils.cli:main"
 
 [tool.pytest.ini_options]
 testpaths = "tests"
