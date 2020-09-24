@@ -19,7 +19,7 @@ Python utilities for Fusemachines
 Features
 --------
 
-* TODO
+* Singleton Metaclass
 
 Credits
 -------
