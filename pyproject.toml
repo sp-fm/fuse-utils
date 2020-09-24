@@ -1,7 +1,7 @@
 [tool]
 [tool.poetry]
 name = "fuse-utils"
-version = "0.1.0"
+version = "0.1.1"
 homepage = "https://github.com/sp-fm/fuse-utils"
 description = "Top-level package for Fusemachines Utilities."
 authors = ["Shashanka Prajapati <shashanka@fusemachines.com>"]
