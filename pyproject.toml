@@ -34,7 +34,7 @@ tox = "*"
 flake8 = "*"
 sphinx = "*"
 sphinx-rtd-theme = "*"
-tomlkit = "*"
+toml = "*"
 pre-commit = "*"
 
 [tool.poetry.scripts]
