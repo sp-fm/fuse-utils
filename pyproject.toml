@@ -26,6 +26,7 @@ packages = [
 [tool.poetry.dependencies]
 python = "^3.7"
 click = "*"
+dynaconf = "*"
 
 [tool.poetry.dev-dependencies]
 pytest = "*"
