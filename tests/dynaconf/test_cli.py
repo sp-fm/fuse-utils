@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 """Tests for `fuse_utils` package."""
+from pathlib import Path
+
 import pytest
 from dynaconf.vendor.box.exceptions import BoxKeyError
 
@@ -21,11 +23,13 @@ class TestMain:
         # dynaconf sets your default env to 'development'
         database = Main.database()
         assert "Database: " in caplog.text
-        assert database == {
+        expected = {
             "host": "localhost",
             "user": "dev_user",
-            "password": "dev_password",
         }
+        if Path("configs/.secrets.yaml").exists():
+            expected.update({"password": "dev_password"})
+        assert database == expected
 
         database = Main("default").database("user")
         assert "User: " in caplog.text
