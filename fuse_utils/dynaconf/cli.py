@@ -3,7 +3,7 @@ from typing import Dict
 import fire
 from loguru import logger
 
-from fuse_utils.dynaconf.services.main import settings
+from fuse_utils.dynaconf import settings
 
 
 class Main:
