@@ -1,3 +1,5 @@
+from typing import Dict
+
 import fire
 from loguru import logger
 
@@ -5,19 +7,23 @@ from fuse_utils.dynaconf.services.main import settings
 
 
 class Main:
-    def __init__(self, env: str = "default") -> None:
+    def __init__(self, env: str = "development") -> None:
         settings.setenv(env)
 
     @staticmethod
-    def package_name() -> None:
+    def package_name() -> str:
         logger.info(f"Package Name: {settings.name}")
+        return settings.name
 
     @staticmethod
-    def database(key: str = "") -> None:
+    def database(key: str = "") -> Dict[str, str]:
         if key:
-            logger.info(f"{key.title()}: {settings.database[key]}")
+            result = {key: settings.database[key]}
+            logger.info(f"{key.title()}: {result}")
         else:
-            logger.info(f"Database: {settings.database}")
+            result = settings.database
+            logger.info(f"Database: {result}")
+        return result
 
 
 if __name__ == "__main__":

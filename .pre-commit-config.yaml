@@ -113,12 +113,3 @@ repos:
             language: python
             always_run: true
             pass_filenames: false
-            stages: [commit]
-
-          - id: pytest-cov
-            name: pytest
-            entry: poetry run pytest --cov --cov-fail-under=100
-            language: python
-            always_run: true
-            pass_filenames: false
-            stages: [push]
