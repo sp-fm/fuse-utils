@@ -40,7 +40,7 @@ toml = "*"
 pre-commit = "*"
 
 [tool.poetry.scripts]
-fuse = "fuse_utils.cli:main"
+fuse = "fuse_utils.dynaconf.cli:main"
 
 [tool.pytest.ini_options]
 testpaths = "tests"

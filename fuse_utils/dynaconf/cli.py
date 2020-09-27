@@ -26,5 +26,9 @@ class Main:
         return result
 
 
-if __name__ == "__main__":
+def main():
     fire.Fire(Main)
+
+
+if __name__ == "__main__":
+    fire.Fire(main)
