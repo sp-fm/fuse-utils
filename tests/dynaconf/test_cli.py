@@ -8,10 +8,10 @@ from fuse_utils.dynaconf.cli import Main
 
 class TestMain:
     @staticmethod
-    def test_package_name(caplog):
-        package_name = Main.package_name()
-        assert "Package Name: " in caplog.text
-        assert package_name == "fuse-utils"
+    def test_project_name(caplog):
+        project_name = Main.project_name()
+        assert "Project Name: " in caplog.text
+        assert project_name == "fuse-utils"
 
     @staticmethod
     def test_database(caplog):

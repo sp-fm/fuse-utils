@@ -11,8 +11,8 @@ class Main:
         settings.setenv(env)
 
     @staticmethod
-    def package_name() -> str:
-        logger.info(f"Package Name: {settings.name}")
+    def project_name() -> str:
+        logger.info(f"Project Name: {settings.name}")
         return settings.name
 
     @staticmethod
