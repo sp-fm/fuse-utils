@@ -13,53 +13,21 @@
 import os
 import sys
 
-import sphinx
-import tomlkit
+import toml
 
 sys.path.insert(0, os.path.abspath('.'))
-
-
-# -- Monkeypatches -----------------------------------------------------------
-
-def _monkeypatch(cls):
-    """Decorator to monkey-patch methods."""
-
-    def decorator(func):
-        method = func.__name__
-        old = getattr(cls, method)
-        setattr(
-            cls,
-            method,
-            lambda inst, *args, **kwargs: func(inst, old, *args, **kwargs),
-        )
-
-    return decorator
-
-
-# workaround until https://github.com/miyakogi/m2r/pull/55 is merged
-@_monkeypatch(sphinx.registry.SphinxComponentRegistry)
-def add_source_parser(self, _old_add_source_parser, *args, **kwargs):
-    """This function changed in sphinx v3.0, we need to fix it back."""
-    # signature is (parser: Type[Parser], **kwargs), but m2r expects
-    # the removed (str, parser: Type[Parser], **kwargs).
-    if isinstance(args[0], str):
-        args = args[1:]
-    return _old_add_source_parser(self, *args, **kwargs)
 
 
 # -- Project information -----------------------------------------------------
 
 def _get_project_meta():
-    with open("../pyproject.toml") as pyproject:
-        file_contents = pyproject.read()
-
-    return tomlkit.parse(file_contents)["tool"]["poetry"]
+    return toml.load("../pyproject.toml")["tool"]["poetry"]
 
 
 pkg_meta = _get_project_meta()
 project = str(pkg_meta["name"])
 copyright = "2020, Shashanka Prajapati"
-author = "Shashanka Prajapati"
+authors = str(pkg_meta["authors"])
 
 # The full version, including alpha/beta/rc tags
 release = str(pkg_meta["version"])

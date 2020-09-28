@@ -24,8 +24,8 @@ Features
 Credits
 -------
 
-This package was created with Cookiecutter_ and the `sp-fm/fuse-standard`_
+This package was created with Cookiecutter_ and the `sp-fm/fuse-framework`_
 project template.
 
 .. _Cookiecutter: https://github.com/audreyr/cookiecutter
-.. _`sp-fm/fuse-standard`: https://github.com/sp-fm/fuse-standard
+.. _`sp-fm/fuse-framework`: https://github.com/sp-fm/fuse-framework

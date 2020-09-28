@@ -1,7 +1,7 @@
 [tool]
 [tool.poetry]
 name = "fuse-utils"
-version = "0.1.1"
+version = "0.2.0"
 homepage = "https://github.com/sp-fm/fuse-utils"
 description = "Top-level package for Fusemachines Utilities."
 authors = ["Shashanka Prajapati <shashanka@fusemachines.com>"]
@@ -25,27 +25,56 @@ packages = [
 
 [tool.poetry.dependencies]
 python = "^3.7"
-click = "*"
+fire = "*"
+loguru = "*"
+dynaconf = "*"
 
 [tool.poetry.dev-dependencies]
 pytest = "*"
-pytest-cov = "*"
+coverage = "*"
 tox = "*"
 flake8 = "*"
 sphinx = "*"
 sphinx-rtd-theme = "*"
-tomlkit = "*"
+toml = "*"
 pre-commit = "*"
 
 [tool.poetry.scripts]
-fuse = "fuse_utils.cli:main"
+fuse = "fuse_utils.dynaconf.cli:main"
 
-[pytest]
+[tool.pytest.ini_options]
 testpaths = "tests"
+
+[tool.coverage.run]
+branch = true
+
+[tool.coverage.report]
+# Regexes for lines to exclude from consideration
+exclude_lines = [
+    # Have to re-enable the standard pragma
+    "pragma: no cover",
+
+    # Don't complain about missing debug-only code:
+    "def __repr__",
+    "if self.debug",
+
+    # Don't complain if tests don't hit defensive assertion code:
+    "raise AssertionError",
+    "raise NotImplementedError",
+
+    # Don't complain if non-runnable code isn't run:
+    "if 0:",
+    "if __name__ == .__main__.:",
+]
+ignore_errors = true
 
 [flake8]
 max-line-length = 88
 max-complexity = 10
+per-file-ignores = """
+    # imported but unused
+    __init__.py: F401
+"""
 
 [mypy]
 ignore_missing_imports = "True"
