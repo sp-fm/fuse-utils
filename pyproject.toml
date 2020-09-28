@@ -1,7 +1,7 @@
 [tool]
 [tool.poetry]
 name = "fuse-utils"
-version = "0.2.1"
+version = "0.2.2"
 repository = "https://github.com/sp-fm/fuse-utils"
 documentation = "https://sp-fm.github.io/fuse-utils/"
 description = "Top-level package for Fusemachines Utilities."
