@@ -14,8 +14,7 @@ jobs:
         runs-on: ubuntu-latest
 
         steps:
-            - name: Check files
-              run: ls
+            - uses: actions/checkout@v2
 
             - name: Generate Docs
               run: make docs
