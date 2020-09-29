@@ -8,11 +8,11 @@ Fusemachines Utilities
     :alt: Tests
 
 .. image:: https://github.com/sp-fm/fuse-utils/workflows/Documentation/badge.svg
-    :target: https://github.com/sp-fm/fuse-utils/actions?query=workflow%3ADocumentation
+    :target: https://sp-fm.github.io/fuse-utils/
     :alt: Documentation
 
 .. image:: https://github.com/sp-fm/fuse-utils/workflows/Release/badge.svg
-    :target: https://github.com/sp-fm/fuse-utils/actions?query=workflow%3ARelease
+    :target: https://pypi.python.org/pypi/fuse-utils
     :alt: Release
 
 .. image:: https://img.shields.io/pypi/v/fuse-utils.svg
