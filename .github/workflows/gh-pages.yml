@@ -41,7 +41,7 @@ jobs:
               run: poetry add sphinx sphinx-rtd-theme toml
 
             - name: Generate Docs
-              run: make docs
+              run: poetry run make docs
 
             - name: Deploy docs to GitHub Pages
               uses: peaceiris/actions-gh-pages@v3
