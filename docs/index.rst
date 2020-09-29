@@ -20,8 +20,8 @@ Welcome to Fusemachines Utilities's documentation!
    :caption: Extra
 
    contributing
+   pypi_release_checklist
    authors
-   changelog
 
 Indices and tables
 ==================

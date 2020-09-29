@@ -22,14 +22,16 @@ Fusemachines Utilities
 Python utilities for Fusemachines
 
 
-* Free software: MIT license
-* Documentation: https://sp-fm.github.io/fuse-utils/
+* **Source Code**: https://github.com/sp-fm/fuse-utils
+* **Documentation**: https://sp-fm.github.io/fuse-utils/
+* **Bug Reports**: https://github.com/sp-fm/fuse-utils/issues
 
 
 Features
 --------
 
 * TODO
+
 
 Credits
 -------
@@ -38,4 +40,4 @@ This package was created with Cookiecutter_ and the `sp-fm/fuse-framework`_
 project template.
 
 .. _Cookiecutter: https://github.com/audreyr/cookiecutter
-.. _`sp-fm/fuse-framework`: https://github.com/sp-fm/fuse-framework
+.. _sp-fm/fuse-framework: https://github.com/sp-fm/fuse-framework

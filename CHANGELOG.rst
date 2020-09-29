@@ -6,7 +6,7 @@ CHANGELOG
 ------------------
 
 Features
-~~~~~~~
+~~~~~~~~
 
 * `Github Actions`_: Continuous Integration
 
