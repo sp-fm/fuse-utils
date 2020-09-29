@@ -3,11 +3,21 @@ Fusemachines Utilities
 ======================
 
 
-.. image:: https://img.shields.io/pypi/v/fuse-utils.svg
-        :target: https://pypi.python.org/pypi/fuse-utils
+.. image:: https://github.com/sp-fm/fuse-utils/workflows/Tests/badge.svg
+    :target: https://github.com/sp-fm/fuse-utils/actions?query=workflow%3ATests
+    :alt: Tests
 
-.. image:: https://img.shields.io/travis/sp-fm/fuse-utils.svg
-        :target: https://travis-ci.com/sp-fm/fuse-utils
+.. image:: https://github.com/sp-fm/fuse-utils/workflows/Documentation/badge.svg
+    :target: https://github.com/sp-fm/fuse-utils/actions?query=workflow%3ADocumentation
+    :alt: Documentation
+
+.. image:: https://github.com/sp-fm/fuse-utils/workflows/Release/badge.svg
+    :target: https://github.com/sp-fm/fuse-utils/actions?query=workflow%3ARelease
+    :alt: Release
+
+.. image:: https://img.shields.io/pypi/v/fuse-utils.svg
+    :target: https://pypi.python.org/pypi/fuse-utils
+    :alt: PyPi Version
 
 Python utilities for Fusemachines
 
