@@ -18,4 +18,3 @@ help:
 # "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).
 %: Makefile
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
-	@find "$(BUILDDIR)/html/" -mindepth 1 -maxdepth 1 | xargs -I '{}' mv {} "$(BUILDDIR)/" ||:
