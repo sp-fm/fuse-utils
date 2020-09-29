@@ -23,24 +23,25 @@ If you are reporting a bug, please include:
 Fix Bugs
 ~~~~~~~~
 
-Look through the GitHub issues for bugs that are tagged with "bug".
+Look through the GitHub issues for bugs that are tagged with ``bug``.
 
 Implement Features
 ~~~~~~~~~~~~~~~~~~
 
-Look through the GitHub issues for features that are tagged with "enhancement".
+Look through the GitHub issues for features that are tagged with ``enhancement``.
 
 Write Documentation
 ~~~~~~~~~~~~~~~~~~~
 
-Fusemachines Utilities could always use more documentation, whether as
-part of the official Fusemachines Utilities docs, in docstrings, or
-even on the web in blog posts, articles, and such.
+Fusemachines Utilities could always use more documentation, whether as part of the
+official Fusemachines Utilities docs, in docstrings, or even on the web in blog posts,
+articles, and such.
 
 Submit Feedback
 ~~~~~~~~~~~~~~~
 
-The best way to send feedback is to file an issue at https://github.com/sp-fm/fuse-utils/issues.
+The best way to send feedback is to file an issue at
+https://github.com/sp-fm/fuse-utils/issues.
 
 If you are proposing a feature:
 
@@ -50,18 +51,18 @@ If you are proposing a feature:
 Get Started!
 ------------
 
-Ready to contribute? Here's how to set up `fuse-utils`
-for local development. Please note this documentation assumes you already have
-`poetry` and `git` installed and ready to go.
+Ready to contribute? Here's how to set up **fuse-utils** for local development. Please
+note this documentation assumes you already have ``poetry`` and ``git`` installed and
+ready to go.
 
-#. Clone the `fuse-utils` repo locally:
+#. Clone the **fuse-utils** repo locally:
 
    .. code-block:: console
 
         $ git clone git@github.com:sp-fm/fuse-utils.git
 
-#. Assuming you have poetry installed, you can create a new environment for your
-   local development by typing:
+#. Assuming you have poetry installed, you can create a new environment for your local
+   development by typing:
 
    .. code-block:: console
 
@@ -76,35 +77,32 @@ for local development. Please note this documentation assumes you already have
 
    Now you can make your changes locally.
 
-#. When you're done making changes, check that your changes pass flake8. Since,
-   this package contains mostly templates the flake should be run for tests
-   directory:
+#. When you're done making changes, check that your changes pass flake8.
 
    .. code-block:: console
 
-        $ flake8 ./tests
+        $ flake8 fuse_utils tests --config=pyproject.toml
 
-#. The next step would be to run the test cases. `fuse-framework` uses pytest,
-   you can run PyTest. Before you run pytest you should ensure all dependancies
-   are installed:
+#. The next step would be to run the test cases. **fuse-utils** uses pytest, you
+   can run PyTest. Before you run pytest you should ensure all dependancies are
+   installed.
 
    .. code-block:: console
 
-        $ poetry install
-        $ pytest ./tests
+        $ pytest
 
-#. Before raising a pull request you should also run tox. This will run the
-   tests across different versions of Python:
+#. Before raising a pull request you should also run tox. This will run the tests
+   across different versions of Python:
 
    .. code-block:: console
 
         $ tox
 
-   If you are missing flake8, pytest, and/or tox, just `poetry add` them into
+   If you are missing flake8, pytest, and/or tox, just ``poetry add`` them into
    your virtualenv.
 
 #. If your contribution is a bug fix or new feature, you may want to add a test
-   to the existing test suite. See section Add a New Test below for details.
+   to the existing test suite. See the section `Add a New Test`_ below for details.
 
 #. Commit your changes and push your branch to GitHub:
 
@@ -123,40 +121,42 @@ Before you submit a pull request, check that it meets these guidelines:
 
 #. The pull request should include tests.
 
-#. If the pull request adds functionality, the docs should be updated. Put your
-   new functionality into a function with a docstring, and add the feature to
-   the list in README.rst.
+#. If the pull request adds functionality, the docs should be updated. Put your new
+   functionality into a function with a docstring, and add the feature to the list in
+   ``README.rst``.
 
 #. The pull request should work for Python 3.7 and 3.8. Check
    https://github.com/sp-fm/fuse-utils/actions?query=workflow%3ATests
    and make sure that the tests pass for all supported Python versions.
 
+.. _new_test:
+
 Add a New Test
 --------------
 
-When fixing a bug or adding features, it's good practice to add a test to
-demonstrate your fix or new feature behaves as expected. These tests should
-focus on one tiny bit of functionality and prove changes are correct.
+When fixing a bug or adding features, it's good practice to add a test to demonstrate
+your fix or new feature behaves as expected. These tests should focus on one tiny bit
+of functionality and prove changes are correct.
 
 To write and run your new test, follow these steps:
 
-#. Add the new test to `tests/test_fuse_utils.py`. Focus
-   your test on the specific bug or a small part of the new feature.
+#. Add the new test to ``tests/<module>/test_<feature>.py``. Focus your test on the
+   specific bug or a small part of the new feature.
 
-#. If you have already made changes to the code, stash your changes and confirm
-   all your changes were stashed:
+#. If you have already made changes to the code, stash your changes and confirm all
+   your changes were stashed:
 
    .. code-block:: console
 
         $ git stash
         $ git stash list
 
-#. Run your test and confirm that your test fails. If your test does not fail,
-   rewrite the test until it fails on the original code:
+#. Run your test and confirm that your test fails. If your test does not fail, rewrite
+   the test until it fails on the original code:
 
    .. code-block:: console
 
-        $ pytest ./tests
+        $ pytest
 
 #. (Optional) Run the tests with tox to ensure that the code changes work with
    different Python versions:
@@ -165,16 +165,15 @@ To write and run your new test, follow these steps:
 
         $ tox
 
-#. Proceed work on your bug fix or the new feature or restore your changes. To
-   restore your stashed changes and confirm their restoration:
+#. Proceed work on your bug fix or the new feature or restore your changes. To restore
+   your stashed changes and confirm their restoration:
 
    .. code-block:: console
 
         $ git stash pop
         $ git stash list
 
-#. Rerun your test and confirm that your test passes. If it passes,
-   congratulations!
+#. Rerun your test and confirm that your test passes. If it passes, congratulations!
 
 Deploying
 ---------
@@ -188,4 +187,9 @@ committed (including an entry in CHANGELOG.rst). Then run:
          $ git tag `poetry version -s`
          $ git push --tags
 
-GitHub Actions will then deploy to PyPI if tests pass.
+GitHub Actions will then deploy to PyPI once you make a release if tests pass.
+
+See pypi-release-checklist_ for more information.
+
+.. _pypi-release-checklist: https://sp-fm.github.io/fuse-utils/pypi_release_checklist.html
+.. _Add a New Test: new_test_
