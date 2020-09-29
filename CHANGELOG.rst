@@ -2,6 +2,29 @@
 CHANGELOG
 =========
 
+0.3.0 (2020-09-29)
+------------------
+
+Features
+~~~~~~~
+
+* `Github Actions`_: Continuous Integration
+
+Changes
+~~~~~~~
+
+* Remove Travis CI
+
+.. _Github Actions: https://docs.github.com/en/free-pro-team@latest/actions
+
+0.2.1 (2020-09-28)
+------------------
+
+Changes
+~~~~~~~
+
+* Add links to the repository, documentation and bug tracker in pyproject.toml
+
 0.2.0 (2020-09-28)
 ------------------
 
