@@ -1,0 +1,19 @@
+name: Documentation
+
+on:
+    push:
+        branches: [$default-branch]
+    pull_request:
+        branches: [$default-branch]
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Deploy
+              uses: peaceiris/actions-gh-pages@v3
+              with:
+                  deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+                  publish_dir: docs/_build
+                  keep_files: true
