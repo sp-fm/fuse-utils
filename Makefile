@@ -73,7 +73,7 @@ docs: ## generate Sphinx HTML documentation, including API docs
 	sphinx-apidoc -o docs/ fuse_utils
 	$(MAKE) -C docs clean
 	$(MAKE) -C docs html
-	$(BROWSER) docs/_build/index.html
+	$(BROWSER) docs/_build/html/index.html
 
 install: clean ## install the package to the active Python's site-packages
 	poetry install
