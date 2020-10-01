@@ -32,12 +32,12 @@ dynaconf = "*"
 
 [tool.poetry.dev-dependencies]
 pytest = "*"
+flake8 = "*"
+pre-commit = "*"
 coverage = "*"
 tox = "*"
-flake8 = "*"
 sphinx-rtd-theme = "*"
 toml = "*"
-pre-commit = "*"
 
 [tool.poetry.scripts]
 fuse = "fuse_utils.dynaconf.cli:main"
