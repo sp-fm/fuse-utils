@@ -31,7 +31,6 @@ loguru = "*"
 dynaconf = "*"
 
 [tool.poetry.dev-dependencies]
-flake8 = "*"
 pre-commit = "*"
 pytest-cov = "*"
 tox = "*"
