@@ -53,6 +53,7 @@ line_length = 88
 
 [tool.pytest.ini_options]
 testpaths = "tests"
+addopts = "--cov --cov-report=term-missing"
 
 [tool.coverage.run]
 branch = true
