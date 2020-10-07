@@ -6,40 +6,34 @@ repos:
         name: Check for added large files
         description: Prevent giant files from being committed
         entry: check-added-large-files
-        language: python
 
       - id: check-ast
         name: Check python ast
         description: Simply check whether the files parse as valid python.
         entry: check-ast
-        language: python
         types: [python]
 
       - id: check-case-conflict
         name: Check for case conflicts
         description: Check for files that would conflict in case-insensitive filesystems
         entry: check-case-conflict
-        language: python
 
       - id: check-merge-conflict
         name: Check for merge conflicts
         description: Check for files that contain merge conflict strings.
         entry: check-merge-conflict
-        language: python
         types: [text]
 
       - id: debug-statements
         name: Debug Statements (Python)
         description: Check for debugger imports and py37+ `breakpoint()` calls in python source.
         entry: debug-statement-hook
-        language: python
         types: [python]
 
       - id: end-of-file-fixer
         name: Fix End of Files
         description: Ensures that a file is either empty, or ends with one newline.
         entry: end-of-file-fixer
-        language: python
         types: [text]
         stages: [commit, push, manual]
 
@@ -47,13 +41,11 @@ repos:
         name: Mixed line ending
         description: Replaces or checks mixed line ending
         entry: mixed-line-ending
-        language: python
         types: [text]
 
       - id: no-commit-to-branch
         name: "Don't commit to branch"
         entry: no-commit-to-branch
-        language: python
         pass_filenames: false
         always_run: true
 
@@ -61,7 +53,6 @@ repos:
         name: Trim Trailing Whitespace
         description: This hook trims trailing whitespace.
         entry: trailing-whitespace-fixer
-        language: python
         types: [text]
         stages: [commit, push, manual]
 
@@ -72,47 +63,44 @@ repos:
         args: [--py36-plus]
 
   - repo: https://github.com/psf/black
-    rev: stable
+    rev: 20.8b1
     hooks:
       - id: black
         language_version: python3
-        exclude: docs
+
+  - repo: https://github.com/pycqa/isort
+    rev: 5.5.4
+    hooks:
+      - id: isort
 
   - repo: https://gitlab.com/pycqa/flake8
-    rev: 3.8.0
+    rev: 3.8.4
     hooks:
       - id: flake8
-        exclude: docs
-
-  - repo: https://github.com/asottile/reorder_python_imports
-    rev: v2.3.0
-    hooks:
-      - id: reorder-python-imports
-        args: [--py3-plus]
-        exclude: docs
 
   - repo: https://github.com/pre-commit/mirrors-mypy
-    rev: v0.770
+    rev: v0.782
     hooks:
       - id: mypy
         exclude: docs
 
   - repo: https://github.com/prettier/prettier
-    rev: 2.1.1
+    rev: 2.1.2
     hooks:
       - id: prettier
 
   - repo: local
     hooks:
       - id: install-dependencies
-        name: Installing Dependencies
+        name: Install Dependencies
         entry: poetry install
         language: python
         always_run: true
         pass_filenames: false
-      - id: pytest
-        name: pytest
-        entry: poetry run pytest
+
+      - id: test
+        name: Run tests
+        entry: poetry run pytest --cov --cov-report=term-missing
         language: python
         always_run: true
         pass_filenames: false

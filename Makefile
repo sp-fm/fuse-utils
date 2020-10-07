@@ -29,7 +29,7 @@ help:
 init:
 	git init
 	poetry install
-	pre-commit install
+	poetry run pre-commit install
 
 clean: clean-build clean-pyc clean-test ## remove all build, test, coverage and Python artifacts
 
