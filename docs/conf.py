@@ -15,10 +15,11 @@ import sys
 
 import toml
 
-sys.path.insert(0, os.path.abspath('.'))
+sys.path.insert(0, os.path.abspath("."))
 
 
 # -- Project information -----------------------------------------------------
+
 
 def _get_project_meta():
     return toml.load("../pyproject.toml")["tool"]["poetry"]
@@ -29,8 +30,11 @@ project = str(pkg_meta["name"])
 copyright = "2020, Shashanka Prajapati"
 authors = str(pkg_meta["authors"])
 
+# The short X.Y version
+version = str(pkg_meta["version"])
+
 # The full version, including alpha/beta/rc tags
-release = str(pkg_meta["version"])
+release = version
 
 # -- General configuration ---------------------------------------------------
 
@@ -49,24 +53,24 @@ extensions = [
 ]
 
 # Add any paths that contain templates here, relative to this directory.
-templates_path = ['_templates']
+templates_path = ["_templates"]
 
 # The suffix(es) of source filenames.
 # You can specify multiple suffix as a list of string:
 #
 # source_suffix = ['.rst', '.md']
-source_suffix = '.rst'
+source_suffix = ".rst"
 
 # The master toctree document.
-master_doc = 'index'
+master_doc = "index"
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
+exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 
 # The name of the Pygments (syntax highlighting) style to use.
-pygments_style = 'sphinx'
+pygments_style = "sphinx"
 
 # -- Options for todo extension ----------------------------------------------
 
@@ -78,7 +82,7 @@ todo_include_todos = False
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'sphinx_rtd_theme'
+html_theme = "sphinx_rtd_theme"
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,

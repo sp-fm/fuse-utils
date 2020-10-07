@@ -31,16 +31,22 @@ loguru = "*"
 dynaconf = "*"
 
 [tool.poetry.dev-dependencies]
-pytest = "*"
-coverage = "*"
+pre-commit = "*"
+pytest-cov = "*"
 tox = "*"
-flake8 = "*"
 sphinx-rtd-theme = "*"
 toml = "*"
-pre-commit = "*"
 
 [tool.poetry.scripts]
 fuse = "fuse_utils.dynaconf.cli:main"
+
+[tool.isort]
+multi_line_output = 3
+include_trailing_comma = true
+force_grid_wrap = 0
+use_parentheses = true
+ensure_newline_before_comments = true
+line_length = 88
 
 [tool.poetry.urls]
 "Bug Tracker" = "https://github.com/sp-fm/fuse-utils/issues"
@@ -50,6 +56,9 @@ testpaths = "tests"
 
 [tool.coverage.run]
 branch = true
+source = [
+    "fuse_utils",
+]
 
 [tool.coverage.report]
 # Regexes for lines to exclude from consideration
@@ -68,22 +77,12 @@ exclude_lines = [
     # Don't complain if non-runnable code isn't run:
     "if 0:",
     "if __name__ == .__main__.:",
+
+    # Don't complain about fire commands
+    "fire.Fire",
 ]
+fail_under = 90
 ignore_errors = true
-
-[flake8]
-max-line-length = 88
-max-complexity = 10
-per-file-ignores = """
-    # imported but unused
-    __init__.py: F401
-"""
-
-[mypy]
-ignore_missing_imports = "True"
-check_untyped_defs = "True"
-warn_redundant_casts = "True"
-warn_unreachable = "True"
 
 [build-system]
 requires = ["poetry>=0.12"]
