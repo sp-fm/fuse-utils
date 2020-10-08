@@ -2,6 +2,17 @@
 Fusemachines Utilities
 ======================
 
+.. image:: https://img.shields.io/badge/code%20style-black-000000.svg
+    :target: https://github.com/psf/black
+    :alt: Code style: black
+
+.. image:: https://img.shields.io/badge/%20imports-isort-%231674b1?style=flat&labelColor=ef8336
+    :target: https://pycqa.github.io/isort/
+    :alt: imports: isort
+
+.. image:: http://www.mypy-lang.org/static/mypy_badge.svg
+    :target: http://mypy-lang.org/
+    :alt: Checked with mypy
 
 .. image:: https://github.com/sp-fm/fuse-utils/workflows/Tests/badge.svg
     :target: https://github.com/sp-fm/fuse-utils/actions?query=workflow%3ATests
