@@ -43,8 +43,8 @@ jobs:
       - name: Install dependencies
         run: poetry install
 
-      - name: Run pre-commit actions
-        run: poetry run pre-commit run --all-files
+      - name: Run pre-commit action
+        uses: pre-commit/action@v2.0.0
 
       - name: Run Tox
         run: poetry run tox -e py
