@@ -77,29 +77,13 @@ ready to go.
 
    Now you can make your changes locally.
 
-#. When you're done making changes, check that your changes pass flake8.
-
-   .. code-block:: console
-
-        $ flake8 fuse_utils tests --config=pyproject.toml
-
-#. The next step would be to run the test cases. **fuse-utils** uses pytest, you
-   can run PyTest. Before you run pytest you should ensure all dependancies are
-   installed.
-
-   .. code-block:: console
-
-        $ pytest
-
-#. Before raising a pull request you should also run tox. This will run the tests
-   across different versions of Python:
+#. Before raising a pull request you should run tox. This will run the tests
+   across different versions of Python, perform pre-commit checks and tests your
+   documentation build.
 
    .. code-block:: console
 
         $ tox
-
-   If you are missing flake8, pytest, and/or tox, just ``poetry add`` them into
-   your virtualenv.
 
 #. If your contribution is a bug fix or new feature, you may want to add a test
    to the existing test suite. See the section `Add a New Test`_ below for details.
